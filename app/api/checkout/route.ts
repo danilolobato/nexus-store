@@ -14,7 +14,7 @@ export async function POST(request: Request) {
 
     { /*Transacción en Prisma / Neon */}
 
-    const result = await prisma.$transaction(async (tx) => {
+    const result = await prisma.$transaction(async (tx: any) => {
       const order = await tx.order.create({
         data: {
           customerName: customerName || 'Cliente Nexus',
